@@ -1,0 +1,5 @@
+P:\Git\1dv402-al222jf1-3-godtyckligLonerevision\1.3 godtyckligLonerevision\1.3 godtyckligLonerevision\bin\Debug\1.3 godtyckligLonerevision.exe
+P:\Git\1dv402-al222jf1-3-godtyckligLonerevision\1.3 godtyckligLonerevision\1.3 godtyckligLonerevision\bin\Debug\1.3 godtyckligLonerevision.pdb
+P:\Git\1dv402-al222jf1-3-godtyckligLonerevision\1.3 godtyckligLonerevision\1.3 godtyckligLonerevision\obj\x86\Debug\1.3 godtyckligLonerevision.exe
+P:\Git\1dv402-al222jf1-3-godtyckligLonerevision\1.3 godtyckligLonerevision\1.3 godtyckligLonerevision\obj\x86\Debug\1.3 godtyckligLonerevision.pdb
+P:\Git\1dv402-al222jf1-3-godtyckligLonerevision\1.3 godtyckligLonerevision\1.3 godtyckligLonerevision\obj\x86\Debug\1.3 godtyckligLonerevision.csprojResolveAssemblyReference.cache
