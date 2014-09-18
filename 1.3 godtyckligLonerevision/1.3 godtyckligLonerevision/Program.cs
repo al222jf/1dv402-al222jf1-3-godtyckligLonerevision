@@ -21,12 +21,10 @@ namespace _1._3_godtyckligLonerevision
             }
             else
             {
-                Console.WriteLine();
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
-                Console.WriteLine();
+                Console.WriteLine("\n Du måste mata in minst två löner för att kunna göra en beräkning! \n");
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("Tryck tanget för ny beräkning - Esc avslutar.");
+                Console.WriteLine("\n Tryck tanget för ny beräkning - Esc avslutar.\n");
                 Console.ResetColor();
 
                 if (Console.ReadKey(true).Key == ConsoleKey.Escape)
@@ -46,14 +44,32 @@ namespace _1._3_godtyckligLonerevision
 
             //Loops out the amount of salaries the user want
             Console.WriteLine();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < salaryArray.Length; i++)
             {
-                Console.Write("Ange lön nummer {0}: ", i + 1);
-                salaryArray[i] = int.Parse(Console.ReadLine());
+                while (true)
+                {
+                    Console.Write("Ange lön nummer {0}: ", i + 1);
+                    string salary = Console.ReadLine();
+                    
+                    try
+                    {
+                        salaryArray[i] = int.Parse(salary);
+                        break;
+                    }
+                    catch
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.Out.WriteLine("\n FEL! {0} kan inte tolkas som ett heltal! \n", salary);
+                        Console.ResetColor();
+                    }
+                }
             }
             Console.WriteLine();
 
-            
+            // Clone salaryArray to salaryArrayCopy to be able to show the correct output after salaryArray is sorted
+            int[] salaryArrayCopy = new int[salaryArray.Length];
+            Array.Copy(salaryArray, salaryArrayCopy, salaryArray.Length);
+
             //Calculates the median
             Console.WriteLine("----------------------------------------");
             Array.Sort(salaryArray);
@@ -79,12 +95,12 @@ namespace _1._3_godtyckligLonerevision
             difference = salaryArray.Max() - salaryArray.Min();
 
             Console.WriteLine("Lönespridning:{0:c0}", difference);
-
             Console.WriteLine("----------------------------------------");
+            
             //Write out from array and show the three in a row
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < salaryArray.Length; i++)
             {
-                Console.Write("{0}   ", salaryArray[i]);
+                Console.Write("{0}   ", salaryArrayCopy[i]);
 
                 if ((i + 1) % 3 == 0)
                 {
@@ -96,22 +112,23 @@ namespace _1._3_godtyckligLonerevision
         }
         private static int ReadInt(string prompt) 
         {
+            string salaries;
             int staticSalaries;
+
             while (true)
             {
+                Console.Write(prompt);
+                salaries = Console.ReadLine();
+                    
                 try
                 {
-                    Console.Write(prompt);
-                    staticSalaries = int.Parse(Console.ReadLine());
-                    
+                    staticSalaries = int.Parse(salaries);
                     return staticSalaries;
                 }
                 catch
                 {
-                    
-                    Console.WriteLine();
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FelFelFel {0}", staticSalaries);
+                    Console.Out.WriteLine("\n FEL! {0} kan inte tolkas som ett heltal! \n", salaries);
                     Console.ResetColor();
                 }
             }
