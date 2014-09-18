@@ -21,11 +21,21 @@ namespace _1._3_godtyckligLonerevision
             }
             else
             {
-                Console.WriteLine("den är mer än två!");
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Tryck tanget för ny beräkning - Esc avslutar.");
+                Console.ResetColor();
+
+                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                {
+                    return;
+                }
             }
             
             //User inputs salaries
-            
         }
         private static void ProcessSalaries(int count)
         {
@@ -43,7 +53,9 @@ namespace _1._3_godtyckligLonerevision
             }
             Console.WriteLine();
 
+            
             //Calculates the median
+            Console.WriteLine("----------------------------------------");
             Array.Sort(salaryArray);
             int median = salaryArray.Length;
 
@@ -68,17 +80,41 @@ namespace _1._3_godtyckligLonerevision
 
             Console.WriteLine("Lönespridning:{0:c0}", difference);
 
-            //Write out from array
-            //for (int i = count; i > 0; i--)
-            //{
-            //    Console.WriteLine(salaryArray[i]);
-            //}
+            Console.WriteLine("----------------------------------------");
+            //Write out from array and show the three in a row
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write("{0}   ", salaryArray[i]);
+
+                if ((i + 1) % 3 == 0)
+                {
+                    Console.WriteLine();
+                }
+            }
+
+            Console.WriteLine();
         }
         private static int ReadInt(string prompt) 
         {
-            Console.Write(prompt);
-            int staticSalaries = int.Parse(Console.ReadLine());
-                return staticSalaries;
+            int staticSalaries;
+            while (true)
+            {
+                try
+                {
+                    Console.Write(prompt);
+                    staticSalaries = int.Parse(Console.ReadLine());
+                    
+                    return staticSalaries;
+                }
+                catch
+                {
+                    
+                    Console.WriteLine();
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("FelFelFel {0}", staticSalaries);
+                    Console.ResetColor();
+                }
+            }
         }
     }   
 }
