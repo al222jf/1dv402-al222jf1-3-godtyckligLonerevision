@@ -14,24 +14,30 @@ namespace _1._3_godtyckligLonerevision
             int salaryAmount;
             
             //User input number of saleries
-            numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
-            if (numberOfSalaries >= 2)
+            
+            do
             {
-                ProcessSalaries(numberOfSalaries);
-            }
-            else
-            {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n Du måste mata in minst två löner för att kunna göra en beräkning! \n");
-                Console.BackgroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("\n Tryck tanget för ny beräkning - Esc avslutar.\n");
-                Console.ResetColor();
+                numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
 
-                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                if (numberOfSalaries >= 2)
                 {
-                    return;
+                    ProcessSalaries(numberOfSalaries);
                 }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n Du måste mata in minst två löner för att kunna göra en beräkning! \n");
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("\n Tryck tanget för ny beräkning - Esc avslutar.\n");
+                    Console.ResetColor();
+                }
+
+
+
+
+
             }
+            while (Console.ReadKey(true).Key == ConsoleKey.Escape == false);
             
             //User inputs salaries
         }
