@@ -110,8 +110,6 @@ namespace _1._3_godtyckligLonerevision
 
             //Display a text message asking if the user wants to do a new calculation or end
             Console.WriteLine();
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n Du måste mata in minst två löner för att kunna göra en beräkning!");
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("\n Tryck tanget för ny beräkning - Esc avslutar.\n");
             Console.ResetColor();
@@ -125,7 +123,7 @@ namespace _1._3_godtyckligLonerevision
             {
                 Console.Write(prompt);
                 salaries = Console.ReadLine();
-                    
+
                 try
                 {
                     staticSalaries = int.Parse(salaries);
