@@ -13,8 +13,7 @@ namespace _1._3_godtyckligLonerevision
             int numberOfSalaries;
             int salaryAmount;
             
-            //User input number of saleries
-            
+            //do while loop to be able to press escape or any key if the want to end or countinue the program
             do
             {
                 numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
@@ -34,7 +33,7 @@ namespace _1._3_godtyckligLonerevision
             }
             while (Console.ReadKey(true).Key == ConsoleKey.Escape == false);
             
-            //User inputs salaries
+            
            
         }
         private static void ProcessSalaries(int count)
@@ -68,7 +67,7 @@ namespace _1._3_godtyckligLonerevision
             }
             Console.WriteLine();
 
-            // Clone salaryArray to salaryArrayCopy to be able to show the correct output after salaryArray is sorted
+            // Clone salaryArray to salaryArrayCopy to be able to show the correct order of the array after salaryArray is sorted
             int[] salaryArrayCopy = new int[salaryArray.Length];
             Array.Copy(salaryArray, salaryArrayCopy, salaryArray.Length);
 
@@ -110,7 +109,7 @@ namespace _1._3_godtyckligLonerevision
                 }
             }
 
-            //If the user wants to do a new calculation or end
+            //Display a text message asking if the user wants to do a new calculation or end
             Console.WriteLine();
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("\n Du måste mata in minst två löner för att kunna göra en beräkning!");
