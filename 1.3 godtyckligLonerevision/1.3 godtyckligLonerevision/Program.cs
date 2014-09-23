@@ -31,15 +31,11 @@ namespace _1._3_godtyckligLonerevision
                     Console.WriteLine("\n Tryck tanget för ny beräkning - Esc avslutar.\n");
                     Console.ResetColor();
                 }
-
-
-
-
-
             }
             while (Console.ReadKey(true).Key == ConsoleKey.Escape == false);
             
             //User inputs salaries
+           
         }
         private static void ProcessSalaries(int count)
         {
@@ -65,7 +61,7 @@ namespace _1._3_godtyckligLonerevision
                     catch
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
-                        Console.Out.WriteLine("\n FEL! {0} kan inte tolkas som ett heltal! \n", salary);
+                        Console.Out.WriteLine("\n FEL! \"{0}\" kan inte tolkas som ett heltal! \n", salary);
                         Console.ResetColor();
                     }
                 }
@@ -114,7 +110,13 @@ namespace _1._3_godtyckligLonerevision
                 }
             }
 
+            //If the user wants to do a new calculation or end
             Console.WriteLine();
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n Du måste mata in minst två löner för att kunna göra en beräkning!");
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("\n Tryck tanget för ny beräkning - Esc avslutar.\n");
+            Console.ResetColor();
         }
         private static int ReadInt(string prompt) 
         {
