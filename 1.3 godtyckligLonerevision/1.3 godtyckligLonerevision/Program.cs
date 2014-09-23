@@ -11,7 +11,6 @@ namespace _1._3_godtyckligLonerevision
         {
             //Declare varible
             int numberOfSalaries;
-            int salaryAmount;
             
             //do while loop to be able to press escape or any key if the want to end or countinue the program
             do
