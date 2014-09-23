@@ -73,9 +73,8 @@ namespace _1._3_godtyckligLonerevision
             Console.WriteLine("{0,-15}:{1,15:c0}","Medellön", salaryArray.Average());
 
             //Calculate the difference between the max and min amount
-            difference = salaryArray.Max() - salaryArray.Min();
 
-            Console.WriteLine("{0,-15}:{1,15:c0}","Lönespridning", difference);
+            Console.WriteLine("{0,-15}:{1,15:c0}", "Lönespridning", salaryArray.Max() - salaryArray.Min());
             Console.WriteLine("----------------------------------------");
             
             //Write out from array and show the three in a row
