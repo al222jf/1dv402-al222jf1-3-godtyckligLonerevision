@@ -30,11 +30,9 @@ namespace _1._3_godtyckligLonerevision
                     Console.ResetColor();
                 }
             }
-            while (Console.ReadKey(true).Key == ConsoleKey.Escape == false);
-            
-            
-           
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
+
         private static void ProcessSalaries(int count)
         {
             //Declare an array that will be as big as the numberOfSalaries
@@ -46,23 +44,7 @@ namespace _1._3_godtyckligLonerevision
             Console.WriteLine();
             for (int i = 0; i < salaryArray.Length; i++)
             {
-                while (true)
-                {
-                    Console.Write("Ange lön nummer {0}: ", i + 1);
-                    string salary = Console.ReadLine();
-                    
-                    try
-                    {
-                        salaryArray[i] = int.Parse(salary);
-                        break;
-                    }
-                    catch
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.Out.WriteLine("\n FEL! \"{0}\" kan inte tolkas som ett heltal! \n", salary);
-                        Console.ResetColor();
-                    }
-                }
+                salaryArray[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i + 1));
             }
             Console.WriteLine();
 
