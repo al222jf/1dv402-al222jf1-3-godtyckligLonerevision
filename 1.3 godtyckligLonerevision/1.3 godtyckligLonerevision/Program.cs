@@ -55,23 +55,22 @@ namespace _1._3_godtyckligLonerevision
             //Calculates the median
             Console.WriteLine("----------------------------------------");
             Array.Sort(salaryArray);
-            int median = salaryArray.Length;
+            
 
-            if (median % 2 == 0)
+            if (salaryArray.Length % 2 == 0)
             {
-                int firstMedian = salaryArray[(median / 2 - 1)];
-                int secondMedian = salaryArray[(median / 2)];
+                int firstMedian = salaryArray[(salaryArray.Length / 2 - 1)];
+                int secondMedian = salaryArray[(salaryArray.Length / 2)];
                 Console.WriteLine("{0,-15}:{1,15:c0}","Medianlön", (firstMedian + secondMedian) / 2);
             }
             else
             {
-                Console.WriteLine("{0,-15}:{1,15:c0}","Medianlön", salaryArray[median / 2]);
+                Console.WriteLine("{0,-15}:{1,15:c0}","Medianlön", salaryArray[(salaryArray.Length / 2)]);
             }
 
             //Calculate the average
-            average = salaryArray.Average();
 
-            Console.WriteLine("{0,-15}:{1,15:c0}","Medellön", average);
+            Console.WriteLine("{0,-15}:{1,15:c0}","Medellön", salaryArray.Average());
 
             //Calculate the difference between the max and min amount
             difference = salaryArray.Max() - salaryArray.Min();
